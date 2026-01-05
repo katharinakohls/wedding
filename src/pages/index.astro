@@ -1,0 +1,160 @@
+---
+import "../styles/global.css";
+import heroImg from "../assets/photos/hero.jpg";
+import p1 from "../assets/photos/img-1.jpg";
+import p2 from "../assets/photos/img-2.jpg";
+import p4 from "../assets/photos/img-4.jpg";
+import p5 from "../assets/photos/img-5.jpg";
+import p6 from "../assets/photos/img-6.jpg";
+import p7 from "../assets/photos/img-7.jpg";
+import p8 from "../assets/photos/img-8.jpg";
+import p9 from "../assets/photos/img-9.jpg";
+import p10 from "../assets/photos/img-10.jpg";
+
+
+const gallery = [p1, p2, p4, p5, p6, p7, p8, p9, p10];
+const dateText = "September 2026 (oder so)";
+const placeText = "folgt";
+---
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500,650&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<html lang="de">
+
+<div class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="#">Katharina & David</a>
+
+    <nav class="nav-links">
+      <a href="#details">Der Tag</a>
+      <a href="#ablauf">Zeitplan</a>
+      <a href="#anreise">Ankommen</a>
+      <a class="nav-cta" href="#rsvp">Zusagen</a>
+    </nav>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="container hero-inner">
+    <div class="kicker">
+      <span class="scroll-dot" aria-hidden="true"></span>
+      <span>Save the date</span>
+    </div>
+
+    <div class="hero-photo card">
+    <img src={heroImg.src} alt="Foto von uns" loading="eager" />
+  </div>
+
+    <h1 class="headline">Katharina & David</h1>
+
+    <div class="hero-glass">
+      <div class="small" style="color: var(--text); font-weight: 600;">
+        September 2026 · Ort folgt
+      </div>
+    </div>
+
+    <p class="subline">
+      Wir freuen uns riesig, diesen Tag mit euch zu teilen. Alle Details findet ihr weiter unten 🤍
+    </p>
+
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#rsvp">Zusagen</a>
+      <a class="btn btn-ghost" href="#details">Infos</a>
+    </div>
+
+    <section id="galerie" class="section">
+  <div class="container">
+
+    <div class="gallery">
+      {gallery.map((img, i) => (
+        <a class="gallery-item" href={img.src} target="_blank" rel="noreferrer">
+          <img src={img.src} alt={`Foto ${i + 1}`} loading="lazy" />
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+    <a class="scroll-hint" href="#details">
+      <span class="small">Scroll für Details</span>
+      <span aria-hidden="true">↓</span>
+    </a>
+  </div>
+</header>
+
+<main>
+  <section id="details" class="section">
+    <div class="container">
+      <h2 class="h2">Details</h2>
+      <div class="grid grid-3">
+        <div class="card" style="padding:18px;">
+          <strong>Trauung</strong>
+          <p class="small">Uhrzeit/Ort/Ankunft kommt bald.</p>
+        </div>
+        <div class="card" style="padding:18px;">
+          <strong>Feier</strong>
+          <p class="small">Sektempfang, Dinner, Party Details folgen.</p>
+        </div>
+        <div class="card" style="padding:18px;">
+          <strong>Geschenke</strong>
+          <p class="small">Eure Anwesenheit ist das grösste Geschenk</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="ablauf" class="section">
+    <div class="container">
+      <h2 class="h2">Ablauf</h2>
+      <div class="card" style="padding:18px;">
+        <div class="small" style="display:grid; gap:10px;">
+          <div><strong>14:00</strong> Ankommen</div>
+          <div><strong>15:00</strong> Trauung</div>
+          <div><strong>18:00</strong> Dinner & Party</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="anreise" class="section">
+    <div class="container">
+      <h2 class="h2">Anreise</h2>
+      <div class="grid grid-3">
+        <div class="card" style="padding:18px;">
+          <strong>Adresse</strong>
+          <p class="small">folgt</p>
+        </div>
+        <div class="card" style="padding:18px;">
+          <strong>Parken</strong>
+          <p class="small">folgt</p>
+        </div>
+        <div class="card" style="padding:18px;">
+          <strong>Unterkunft</strong>
+          <p class="small">Empfehlungen folgen</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="rsvp" class="section">
+    <div class="container">
+      <div class="card" style="padding:22px; display:flex; gap:14px; align-items:center; justify-content:space-between; flex-wrap:wrap;">
+        <div>
+          <div class="h2">RSVP</div>
+          <div class="small">Am besten über ein Formular (Google Forms / Tally). Link kommt hier rein.</div>
+        </div>
+        <a class="btn btn-primary" href="#" onclick="alert('Hier später deinen RSVP-Link eintragen.'); return false;">Zum Formular</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="section" style="padding-top:10px;">
+  <div class="container small">© {new Date().getFullYear()} Katharina & David</div>
+</footer>
